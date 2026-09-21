@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warung Nusantara — Pesan Makanan Tradisional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="logo">Warung<span>Nusantara</span></a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a href="#menu">Menu</a>
+      <a href="#favorit">Favorit</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <button class="cart-toggle" id="cartToggle" aria-label="Buka keranjang">
+      <span class="cart-toggle-icon">🧺</span>
+      Keranjang
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Warung Digital &middot; Resep Turun-Temurun</p>
+        <h1 class="hero-title">Cita Rasa Nusantara,<br>Diantar ke Mejamu</h1>
+        <p class="hero-sub">Dari dapur rumahan hingga meja makanmu — rendang, sate, soto, dan jajanan tradisional dimasak dengan bumbu asli, dipesan dalam hitungan menit.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">Lihat Menu Warung</a>
+          <a href="#tentang" class="btn btn-ghost">Kenapa Warung Nusantara?</a>
+        </div>
+      </div>
+      <div class="hero-plate" aria-hidden="true">
+        <div class="plate-ring">
+          <div class="plate-item plate-item--1"></div>
+          <div class="plate-item plate-item--2"></div>
+          <div class="plate-item plate-item--3"></div>
+          <div class="plate-item plate-item--4"></div>
+          <div class="plate-center">Etalase<br>Hari Ini</div>
+        </div>
+      </div>
+    </div>
+    <div class="wood-strip" aria-hidden="true"></div>
+  </section>
+
+  <section class="ranking-section" id="favorit">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-eyebrow">Top Ranking</p>
+        <h2>Menu Favorit Pelanggan</h2>
+        <p class="section-sub">Diurutkan dari yang paling laris dipesan minggu ini.</p>
+      </div>
+      <div class="ranking-list" id="rankingList"></div>
+    </div>
+  </section>
+
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-eyebrow">Etalase Warung</p>
+        <h2>Pilih Menu, Tambah ke Keranjang</h2>
+      </div>
+
+      <div class="menu-controls">
+        <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="Kategori menu">
+          <button class="tab active" data-category="semua">Semua</button>
+          <button class="tab" data-category="berat">Makanan Berat</button>
+          <button class="tab" data-category="sate">Sate &amp; Panggangan</button>
+          <button class="tab" data-category="sup">Sup &amp; Soto</button>
+          <button class="tab" data-category="jajanan">Jajanan</button>
+          <button class="tab" data-category="minuman">Minuman</button>
+        </div>
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="Cari nama masakan...">
+        </div>
+      </div>
+
+      <div class="menu-grid" id="menuGrid"></div>
+      <p class="menu-empty" id="menuEmpty" hidden>Menu tidak ditemukan. Coba kata kunci lain.</p>
+    </div>
+  </section>
+
+  <section class="about-section" id="tentang">
+    <div class="container about-inner">
+      <div class="about-card">
+        <span class="about-number">01</span>
+        <h3>Bumbu Asli, Bukan Instan</h3>
+        <p>Setiap bumbu diulek dan ditumis langsung di dapur mitra warung kami, tanpa bumbu instan.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-number">02</span>
+        <h3>Dimasak Saat Dipesan</h3>
+        <p>Pesanan mulai dimasak begitu kamu checkout, supaya sampai di mejamu tetap hangat.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-number">03</span>
+        <h3>Dari Sabang Sampai Merauke</h3>
+        <p>Menu dikurasi dari berbagai daerah — Padang, Betawi, Jawa, Makassar, dan Bali.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="kontak">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="logo">Warung<span>Nusantara</span></p>
+      <p>Buka setiap hari, 09.00 – 21.00 WIB.</p>
+    </div>
+    <div class="footer-contact">
+      <p>Jl. Rempah Raya No. 17, Jakarta</p>
+      <p>0812-3456-7890</p>
+      <p>halo@warungnusantara.id</p>
+    </div>
+  </div>
+  <p class="footer-note">© 2026 Warung Nusantara. Dimasak dengan hati.</p>
+</footer>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-label="Keranjang pesanan">
+  <div class="cart-header">
+    <h2>Keranjang Pesanan</h2>
+    <button class="icon-btn" id="closeCart" aria-label="Tutup keranjang">×</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty" id="cartEmptyMsg">Keranjangmu masih kosong. Yuk pilih menu dulu.</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span>Total Belanja</span>
+      <span id="cartTotal">Rp0</span>
+    </div>
+    <button class="btn btn-primary btn-full" id="checkoutBtn" disabled>Checkout Sekarang</button>
+  </div>
+</aside>
+
+<div class="modal" id="checkoutModal" hidden>
+  <div class="modal-content">
+    <button class="icon-btn modal-close" id="closeModal" aria-label="Tutup">×</button>
+
+    <div id="checkoutView">
+      <p class="section-eyebrow">Langkah Terakhir</p>
+      <h2>Detail Pengantaran</h2>
+      <form id="checkoutForm">
+        <label>
+          Nama Penerima
+          <input type="text" name="nama" required placeholder="cth. Siti Rahma">
+        </label>
+        <label>
+          Nomor WhatsApp
+          <input type="tel" name="telepon" required placeholder="08xxxxxxxxxx">
+        </label>
+        <label>
+          Alamat Pengantaran
+          <textarea name="alamat" required placeholder="Nama jalan, nomor rumah, patokan"></textarea>
+        </label>
+        <label>
+          Metode Pembayaran
+          <select name="pembayaran">
+            <option value="cod">Bayar di Tempat (COD)</option>
+            <option value="transfer">Transfer Bank</option>
+            <option value="ewallet">E-Wallet</option>
+          </select>
+        </label>
+        <label>
+          Catatan untuk Warung (opsional)
+          <input type="text" name="catatan" placeholder="cth. sambalnya dipisah">
+        </label>
+
+        <div class="modal-summary" id="modalSummary"></div>
+
+        <button type="submit" class="btn btn-primary btn-full">Buat Pesanan</button>
+      </form>
+    </div>
+
+    <div id="confirmView" hidden>
+      <p class="section-eyebrow">Pesanan Diterima</p>
+      <h2>Terima Kasih, Pesananmu Sedang Disiapkan!</h2>
+      <p class="confirm-order-id" id="confirmOrderId"></p>
+      <div class="modal-summary" id="confirmSummary"></div>
+      <p class="confirm-note">Warung akan menghubungi nomor WhatsApp yang kamu berikan untuk konfirmasi.</p>
+      <button class="btn btn-primary btn-full" id="closeConfirm">Selesai</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
